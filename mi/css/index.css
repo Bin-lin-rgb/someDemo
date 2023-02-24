@@ -1,0 +1,541 @@
+/* 
+
+    .                                 .o8                          
+  .o8                                "888                          
+.o888oo  .ooooo.  oo.ooooo.           888oooo.   .oooo.   oooo d8b 
+  888   d88' `88b  888' `88b          d88' `88b `P  )88b  `888""8P 
+  888   888   888  888   888 8888888  888   888  .oP"888   888     
+  888 . 888   888  888   888          888   888 d8(  888   888     
+  "888" `Y8bod8P'  888bod8P'          `Y8bod8P' `Y888""8o d888b    
+                   888                                             
+                  o888o                                            
+                                                                  
+*/
+.top-bar-wrapper {
+    /* height: 40px; */
+    line-height: 40px;
+    background: #333;
+    width: 100%;
+}
+
+.top-bar a,
+.top-bar .shortcut-cart span,
+.top-bar .shortcut-cart i {
+    /* 为了扩大 a 的范围 */
+    /* 每个a里面有文字，而文字的行高为40，a的高度被文字撑开了 */
+    display: inline-block;
+    font-size: 12px;
+    color: #b0b0b0;
+    text-decoration: none;
+}
+
+.top-bar a:hover {
+    color: #fff;
+}
+
+.top-bar .shortcut-left {
+    float: left;
+    height: 40px;
+    width: 800px;
+}
+
+.top-bar .shortcut-left li {
+    float: left;
+}
+
+/* 一种元素排列居中方式
+.top-bar .shortcut-left{
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+} */
+
+.top-bar .shortcut-left li:not(:last-child)::after,
+.top-bar .shortcut-right li:not(:last-child)::after {
+    content: '|';
+    margin: 0 0.4em;
+    color: #424242;
+}
+
+.top-bar .shortcut-right {
+    float: left;
+    height: 40px;
+    width: 150px;
+    margin-left: 150px;
+}
+
+.top-bar .shortcut-right li {
+    float: left;
+}
+
+.top-bar .shortcut-cart {
+    width: 120px;
+    height: 40px;
+    float: right;
+    text-align: center;
+    background-color: #424242;
+}
+
+.top-bar .shortcut-cart i {
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+
+.shortcut-cart a {
+    display: block;
+}
+
+.top-bar .shortcut-cart:hover a {
+    background-color: #fff;
+}
+
+.top-bar .shortcut-cart:hover a i,
+.top-bar .shortcut-cart:hover a span {
+    color: #ff6700;
+}
+
+.app-download {
+    position: relative;
+}
+
+.app-download:hover::after {
+    display: block;
+}
+
+.app-download:hover .qrcode {
+    height: 148px;
+}
+
+/* 设置三角 */
+.app-download::after {
+    width: 0;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top: none;
+    border-bottom-color: #fff;
+    /* 开启定位相对于 a */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: none;
+}
+
+/* 设置二维码 */
+.qrcode {
+    width: 124px;
+    line-height: 1;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 1px 5px #aaa;
+    /* position 调位置 */
+    position: absolute;
+    /* 二维码居中 */
+    left: 50%;
+    margin-left: -62px;
+    /* 实现缓慢出现，将高度 0->148 设置1s */
+    /* display: none; */
+    height: 0px;
+    overflow: hidden;
+    transition: height .3s;
+    z-index: 20;
+}
+
+.qrcode img {
+    width: 90px;
+    height: 90px;
+    margin: 14px;
+}
+
+/* 设置二维码下的字体 */
+.qrcode span {
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* 
+
+ooooo   ooooo                           .o8                     
+`888'   `888'                          "888                     
+ 888     888   .ooooo.   .oooo.    .oooo888   .ooooo.  oooo d8b 
+ 888ooooo888  d88' `88b `P  )88b  d88' `888  d88' `88b `888""8P 
+ 888     888  888ooo888  .oP"888  888   888  888ooo888  888     
+ 888     888  888    .o d8(  888  888   888  888    .o  888     
+o888o   o888o `Y8bod8P' `Y888""8o `Y8bod88P" `Y8bod8P' d888b    
+                                                                                                                                                                                    
+*/
+
+.site-header {
+    position: relative;
+}
+
+.container {
+    height: 100px;
+    /* position: relative; */
+}
+
+.logo {
+    margin-top: 22px;
+    height: 56px;
+    width: 56px;
+    display: block;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    text-indent: -9999em;
+}
+
+.logo a {
+    display: block;
+    position: absolute;
+    height: 56px;
+    width: 56px;
+    background: url("../img/logo.png");
+    background-size: 56px 56px;
+}
+
+.header-nav {
+    float: left;
+    width: 850px;
+    margin-left: 0.5em;
+}
+
+.nav-list {
+    height: 100px;
+    line-height: 100px;
+    float: left;
+    font-size: 16px;
+    padding-left: 58px;
+}
+
+.nav-list>li {
+    float: left;
+}
+
+.nav-list>li>a {
+    display: block;
+    padding: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.nav-list>li:hover>a {
+    color: #ff6700;
+}
+
+.classification-wrapper {
+    position: relative;
+}
+
+/* 设置左侧导航条 list-left */
+.list-left {
+    width: 234px;
+    height: 420px;
+    padding: 20px 0;
+    background: rgb(0, 0, 0, .6);
+    position: absolute;
+    left: -122px;
+    top: 100px;
+    z-index: 21;
+    /* 给父元素设置的，为了覆盖之前的 line-height */
+    line-height: 1;
+    font-size: 14px;
+}
+
+.list-left li:hover {
+    background: #ff6700;
+}
+
+.list-left li a {
+    display: block;
+    height: 42px;
+    line-height: 42px;
+    color: white;
+    text-decoration: none;
+    padding: 0 24px;
+}
+
+.list-left a i {
+    float: right;
+    /* 单独设置行高使其垂直居中，默认为 1 */
+    line-height: 42px;
+}
+
+.goods-info {
+    /* height: 228px; */
+    height: 0;
+    width: 100%;
+    background: #fff;
+    /* border: 1px solid #ccc;
+    box-shadow: 0 3px 4px rgb(0 0 0 / 18%); */
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    overflow: hidden;
+    transition: height .3s;
+    z-index: 24;
+}
+
+.show-active:hover~.goods-info,
+.goods-info:hover {
+    border: 1px solid #ccc;
+    box-shadow: 0 3px 4px rgb(0 0 0 / 18%);
+    height: 228px;
+}
+
+.header-search {
+    height: 50px;
+    width: 296px;
+    float: left;
+    margin-top: 25px;
+}
+
+.search-form a {
+    float: left;
+}
+
+.search-input {
+    float: left;
+    padding: 0;
+    border: none;
+    height: 48px;
+    width: 222px;
+    padding: 0 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.search-input:focus,
+.search-input:focus+.search-btn {
+    border-color: #ff6700;
+}
+
+.search-btn {
+    width: 52px;
+    height: 50px;
+    float: left;
+    border: 1px solid #ccc;
+    border-left: none;
+    background-color: #fff;
+    font-size: 1.2em;
+    color: #616161;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background: #ff6700;
+    color: #fff;
+}
+
+/* 
+ .----------------.  .----------------.  .-----------------. .-----------------. .----------------.  .----------------. 
+| .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |
+| |   ______     | || |      __      | || | ____  _____  | || | ____  _____  | || |  _________   | || |  _______     | |
+| |  |_   _ \    | || |     /  \     | || ||_   \|_   _| | || ||_   \|_   _| | || | |_   ___  |  | || | |_   __ \    | |
+| |    | |_) |   | || |    / /\ \    | || |  |   \ | |   | || |  |   \ | |   | || |   | |_  \_|  | || |   | |__) |   | |
+| |    |  __'.   | || |   / ____ \   | || |  | |\ \| |   | || |  | |\ \| |   | || |   |  _|  _   | || |   |  __ /    | |
+| |   _| |__) |  | || | _/ /    \ \_ | || | _| |_\   |_  | || | _| |_\   |_  | || |  _| |___/ |  | || |  _| |  \ \_  | |
+| |  |_______/   | || ||____|  |____|| || ||_____|\____| | || ||_____|\____| | || | |_________|  | || | |____| |___| | |
+| |              | || |              | || |              | || |              | || |              | || |              | |
+| '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' |
+ '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------' 
+*/
+
+/* banner */
+
+.banner {
+    position: relative;
+    height: 460px;
+}
+
+.img-list li {
+    position: absolute;
+}
+
+.img-list img {
+    /* 参照物是他的包含块 */
+    /* 注意：li 开启绝对定位之后，找他的包含块 -> html */
+    /* 所以给 banner 设置 position: relative; 让 li 参照 banner 的 width*/
+    width: 100%;
+}
+
+.pointer {
+    position: absolute;
+    bottom: 20px;
+    right: 34px;
+}
+
+.point-list {
+    display: flex;
+}
+
+.pointer a {
+    float: left;
+    height: 6px;
+    width: 6px;
+    background: rgba(0, 0, 0, .4);
+    border-radius: 50%;
+    border: 3px solid;
+    border-color: hsla(0, 0%, 100%, .3);
+    margin: 0 4px;
+}
+
+.pointer a:hover {
+    background: hsla(0, 0%, 100%, .4);
+    border-color: rgba(0, 0, 0, .4);
+}
+
+.banner-arrow {
+    position: relative;
+    font-size: 30px;
+}
+
+.left-arrow {
+    position: absolute;
+    color: #a5b3c1;
+    background: transparent;
+    width: 40px;
+    height: 69px;
+    line-height: 69px;
+    left: 234px;
+    top: 196px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.right-arrow {
+    position: absolute;
+    color: #a5b3c1;
+    background: transparent;
+    width: 40px;
+    height: 69px;
+    line-height: 69px;
+    right: 0;
+    top: 196px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.left-arrow:hover,
+.right-arrow:hover {
+    background: rgb(0, 0, 0, .3);
+}
+
+/* home-tool-bar */
+.home-tool-bar {
+    height: 206px;
+    width: 26px;
+    background: rgb(170, 172, 169);
+    /* 固定定位 */
+    position: fixed;
+    bottom: 80px;
+    /* 
+        原理：居中于视图层 ，然后根据等式加需要的偏移量
+            此处省略 padding、border
+            left + margin-left + width + margin-right + right = 视口的宽度
+            auto + 0 + 26 + （-639px） + 50% = 视口宽度
+    */
+    left: auto;
+    margin-right: -639px;
+    right: 50%;
+    z-index: 35;
+}
+
+.home-sub-wrapper {
+    margin-top: 14px;
+}
+
+.home-sub {
+    height: 170px;
+}
+
+.home-sub li,
+.home-channel-list,
+.home-promo-list {
+    float: left;
+}
+
+.home-channel-list {
+    width: 234px;
+    height: 170px;
+    background: #5f5750;
+    list-style: none;
+    margin-right: 14px;
+}
+
+.home-channel-list a {
+    display: block;
+    width: 77px;
+    height: 84px;
+    font-size: 12px;
+    text-decoration: none;
+    color: #cfccca;
+    text-align: center;
+}
+
+.home-channel-list a:hover {
+    color: #fff;
+}
+
+.home-channel-list i {
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    padding: 20px 0 10px 0;
+}
+
+.home-channel-list li {
+    position: relative;
+}
+
+.home-channel-list li::before {
+    content: '';
+    display: block;
+    background: #665e57;
+    width: 64px;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 4px;
+    margin: 0 auto;
+}
+
+.home-channel-list li::after {
+    content: '';
+    display: block;
+    background:#665e57;
+    width: 1px;
+    height: 70px;
+    position: absolute;
+    left: 4px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+.home-promo-list {
+    width: 978px;
+}
+
+.home-promo-list li {
+    width: 316px;
+    height: 170px;
+}
+
+.home-promo-list li:not(:last-child) {
+    margin-right: 15px;
+}
+
+.home-promo-list li img {
+    width: 316px;
+}
+
+.home-promo-list li:hover{
+    box-shadow: 0 3px 16px rgb(0 0 0 / 10%);
+}
