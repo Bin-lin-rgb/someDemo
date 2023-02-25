@@ -1,0 +1,188 @@
+// 设计稿的 css 宽度
+@total-width: 750;
+
+.w {
+    width: (692 / 40rem);
+}
+
+html {
+    // 设置 rem 比值
+    font-size: (100vw/@total-width*40);
+    background-color: #eff0f4;
+}
+
+a {
+    text-decoration: none;
+}
+
+.top-bar-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .top-bar:extend(.w) {
+        height: (175/40rem);
+        display: flex;
+        justify-content: space-between;
+        // 内容垂直居中
+        align-items: center;
+
+        .title a {
+            font-size: (40/40rem);
+            color: #24253d;
+        }
+
+        .menu-btn a,
+        .search a {
+            font-size: (35/40rem);
+            color: #999;
+        }
+    }
+}
+
+.banner-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .banner:extend(.w) {
+        img:extend(.w) {
+            background: contain;
+        }
+    }
+}
+
+.menu-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .menu:extend(.w) {
+        height: (330/40rem);
+        display: flex;
+        flex-flow: row wrap;
+        align-content: space-evenly;
+        justify-content: space-between;
+
+        a {
+            width: (327/40rem);
+            height: (104/40rem);
+            color: white;
+            display: block;
+            text-align: center;
+            line-height: (104/40rem);
+            font-size: (30/40rem);
+            border-radius: (10/40rem);
+
+            i {
+                margin-right: (24/40rem);
+                font-size: (35/40rem);
+            }
+        }
+
+        a:nth-child(1) {
+            background: #ff7b4d;
+        }
+
+        a:nth-child(2) {
+            background: #d68eff;
+        }
+
+        a:nth-child(3) {
+            background: #ff5070;
+        }
+
+        a:nth-child(4) {
+            background: #0ab5ff;
+        }
+
+
+    }
+}
+
+.course-list-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: (46/40rem);
+
+    .course-list:extend(.w) {
+        height: (390/40rem);
+        // display: flex;
+        // flex-flow: column;
+        // justify-content: space-between;
+
+        .title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: (20/40rem);
+
+            h2 {
+                font-size: (34/40rem);
+                border-left: (5/40rem) #007acc solid;
+                padding-left: (10/40rem);
+            }
+
+            a {
+                font-size: (28/40rem);
+                color: #656565;
+            }
+        }
+
+        .items-list-wrap {
+            width: (720/40rem);
+            padding: (8/40rem);
+            overflow-x: scroll;
+
+            .items-list {
+                display: flex;
+
+                .item {
+                    display: flex;
+                    flex-flow: column;
+                    justify-content: space-evenly;
+                    box-sizing: border-box;
+                    width: (324/40rem);
+                    height: (324/40rem);
+                    border-radius: (10/40rem);
+                    box-shadow: 0 0 (10/40rem) rgba(0, 0, 0, .3);
+                    padding: 0 (20/40rem);
+                    margin-right: (24/40rem);
+                    // 不想让他缩放
+                    flex: none;
+
+                    img {
+                        width: 100%;
+                    }
+
+                    .course-title {
+                        font-size: (30/40rem);
+                    }
+
+                    .author {
+                        display: flex;
+                        align-items: center;
+
+                        .author-avatar {
+                            height: (42/40rem);
+                            width: (42/40rem);
+
+                            img {
+                                border-radius: 50%;
+                            }
+                        }
+
+                        .author-name {
+                            color: #939491;
+                            font-size: (30/40rem);
+                            margin-left: (10/40rem);
+                        }
+                    }
+
+
+                }
+            }
+        }
+    }
+}
